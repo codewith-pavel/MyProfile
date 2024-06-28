@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and global styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+            background: url('images/black.jpeg') no-repeat center center/cover;
+            user-select: none; /* Disable text selection */
+        }
+
+         /* Navigation */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #555;
+            color: #fff;
+        }
+
+        /* Toggle menu button */
+        .toggle-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #menu-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-active #menu-icon {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .toggle-menu {
+                display: block;
+                order: -1;
+            }
+
+            .menu-active nav a {
+                display: block;
+            }
+        }
+
+        /* Section styles */
+        .section {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .section h6 {
+            font-size: 1em;
+            margin: 1%;
+            text-align: right;
+        }
+
+        .section p {
+            font-size: 1em;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .publication {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .publication h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .publication p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .publication a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .publication a:hover {
+            text-decoration: none;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: rgba(0, 0, 0, 0.800);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative; /* Fix the footer to the bottom */
+            bottom: 0; /* Stick it to the bottom */
+            width: 100%; /* Full width */
+            z-index: 999;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+        }
+
+        /* Particle.js container */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Additional CSS for Animation Effects */
+        .section.active {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="material.html">Materials</a>
+        <a href="publication.html" class="active">Publications</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="publications" class="section active">
+        <h2>Reseach papers and publications</h2>
+        <div class="publication">
+            <h3>Publication Title 1</h3>
+            <p>Author(s): John Doe, Jane Smith</p>
+            <p>Abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="publication">
+            <h3>Publication Title 2</h3>
+            <p>Author(s): Alice Johnson, Bob Brown</p>
+            <p>Abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="publication">
+            <h3>Publication Title 3</h3>
+            <p>Author(s): Charlie Davis, Dana White</p>
+            <p>Abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+            <a href="#">Read more</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Portfolio. All rights reserved.</p>
+        <p>Developed & Maintained by Owner</p>
+        <p>Follow me for more info ...</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/mahir.afser.19115/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook"></a>
+            <a href="https://www.linkedin.com/in/mahirafserpavel" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://twitter.com/Pavel1911580" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="twitter"></a>
+            <a href="https://github.com/mahirafserpavel" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/github.png" alt="GitHub"></a>
+            <a href="https://wa.me/8801873742510" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://t.me/mahirafserpavel" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/telegram-app.png" alt="Telegram"></a>
+            <a href="https://join.skype.com/invite/EkbI8cMGpoiI" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/skype.png" alt="Skype"></a>
+            <a href="https://youtube.com/@user-wd9cg7iq5x?si=l_1MVj6c7_tgKOKM" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/youtube-play.png" alt="youtube"></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function toggleMenu() {
+                const navLinks = document.querySelectorAll('nav a');
+                navLinks.forEach(link => link.classList.toggle('active'));
+            }
+
+            const sections = document.querySelectorAll('nav a');
+            sections.forEach(section => {
+                section.addEventListener('click', () => {
+                    sections.forEach(s => s.classList.remove('active'));
+                    section.classList.add('active');
+                });
+            });
+        });
+
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
