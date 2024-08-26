@@ -308,11 +308,79 @@
             font-size: 18px;
             line-height: 1.6;
         }
+        /* Media query for mobile devices */
+@media (max-width: 768px) {
+    /* General body container */
+    .body-container {
+        padding: 10px;
+    }
+
+    /* Profile photo */
+    .profile-photo {
+        text-align: center;
+    }
+
+    .profile-photo img {
+        width: 150px;
+        height: 150px;
+        border: 3px solid #fff;
+    }
+
+    /* About section */
+    .section {
+        padding: 50px 10px;
+    }
+
+    /* Skills section */
+    .skills ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    /* Interests section */
+    .interests p {
+        font-size: 16px;
+    }
+
+    /* Download section */
+    .download a {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .download h3 {
+        font-size: 20px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 0;
+    }
+
+    .social-links a {
+        margin: 0 5px;
+    }
+
+    /* Navigation menu */
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+
+    .toggle-menu {
+        display: block;
+    }
+}
+
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
-
     <nav>
         <a href="index.html" class="active">About</a>
         <a href="project.html">Projects</a>
@@ -398,19 +466,25 @@
    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
    <script>
     document.addEventListener('DOMContentLoaded', function() {
-       function toggleMenu() {
-           const navLinks = document.querySelectorAll('nav a');
-           navLinks.forEach(link => link.classList.toggle('active'));
-       }
+        const toggleButton = document.querySelector('.toggle-menu');
+        const navLinks = document.querySelectorAll('nav a');
 
-       const sections = document.querySelectorAll('nav a');
-       sections.forEach(section => {
-           section.addEventListener('click', () => {
-               sections.forEach(s => s.classList.remove('active'));
-               section.classList.add('active');
-           });
-       });
-   });
+        function toggleMenu() {
+            navLinks.forEach(link => link.style.display = link.style.display === 'block' ? 'none' : 'block');
+            toggleButton.classList.toggle('menu-active');
+        }
+
+        toggleButton.addEventListener('click', toggleMenu);
+
+        const sections = document.querySelectorAll('nav a');
+        sections.forEach(section => {
+            section.addEventListener('click', () => {
+                sections.forEach(s => s.classList.remove('active'));
+                section.classList.add('active');
+                if (window.innerWidth <= 768) toggleMenu(); // Close menu after click on mobile
+            });
+        });
+    });
 
        particlesJS('particles-js', {
            "particles": {

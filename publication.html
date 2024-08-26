@@ -187,6 +187,33 @@
                 opacity: 1;
             }
         }
+        @media (max-width: 768px) {
+    .section {
+        padding: 50px 10px;
+        margin-top: 10px;
+    }
+    
+    .section h2 {
+        font-size: 1.5em;
+    }
+    
+    .section p {
+        font-size: 0.9em;
+    }
+    
+    .publication {
+        padding: 15px;
+    }
+    
+    .publication h3 {
+        font-size: 1.2em;
+    }
+    
+    .publication p {
+        font-size: 0.9em;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -241,10 +268,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             function toggleMenu() {
-                const navLinks = document.querySelectorAll('nav a');
-                navLinks.forEach(link => link.classList.toggle('active'));
-            }
-
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => link.classList.toggle('active'));
+    document.querySelector('nav').classList.toggle('menu-active');  // Add this line to toggle menu visibility
+}
             const sections = document.querySelectorAll('nav a');
             sections.forEach(section => {
                 section.addEventListener('click', () => {

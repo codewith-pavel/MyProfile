@@ -224,6 +224,14 @@
             animation: fadeIn 0.5s ease forwards;
         }
 
+/* Style for the message inside the button */
+#form-message {
+    font-size: 20px; /* Further increased font size for the message */
+    padding: 5px;
+    margin: 5px;
+}
+
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -232,11 +240,87 @@
                 opacity: 1;
             }
         }
+        /* Media Query for Tablets and Smaller Screens */
+@media (max-width: 1024px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 8px;
+    }
+
+    .contact-content {
+        padding: 30px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+    }
+
+    .social-links img {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+
+    .contact-content {
+        padding: 20px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+    }
+
+    .social-links img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+    .contact-content {
+        padding: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 12px;
+    }
+
+    .contact-form button {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .social-links img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
     <nav>
+
         <a href="index.html">About</a>
         <a href="project.html">Projects</a>
         <a href="material.html">Materials</a>
@@ -248,16 +332,19 @@
         <div class="contact-content">
             <h1 class="title">I would love to hear from you :)</h1>
             <div class="subtitle-container">
-                <h6 class="subtitle">If you have any questions, suggestions, or just want to say hello, feel free to reach out to me using the form below.</h6>
+                <!-- New Button -->
+                <!-- New Button with Message Inside -->                     
                 <form class="contact-form" id="contact-form" method="post">
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
                     <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                     <button type="submit">Send Message</button><br>
-                    <h6 class="subtitle">Email at <span class="email-button">mahir.pavel@gmail.com</span> or click the icon below: <br> <a href="mailto:mahir.pavel@gmail.com" target="_blank" ><img src="https://img.icons8.com/fluent/48/000000/gmail.png" alt="Gmail"></a></h6>
+                        <div id="form-message"></div>
+                    <h6 class="subtitle">Email at <span class="email-button">mahir.pavel@gmail.com</span> or click the icon below: <br> <a href="mailto:mahir.pavel@gmail.com" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/gmail.png" alt="Gmail"></a></h6>
                     <h3>Communicate with me via other social media channels.</h3>
                 </form>
             </div>
+            
         </div>
     </div>
 
@@ -281,36 +368,45 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contact-form');
+    const form = document.getElementById('contact-form');
+    const messageContainer = document.getElementById('form-message');
 
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
 
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
-                fetch('https://formspree.io/f/mgvwwrwy', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        message: message
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert('Message sent successfully!');
-                    form.reset();
-                })
-                .catch(error => {
-                    alert('An error occurred while sending your message. Please try again later.');
-                });
-            });
+        // Sending the form data using fetch
+        fetch('https://formspree.io/f/mgvwwrwy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                messageContainer.style.color = '#ffffff'; // Green color for success
+                messageContainer.innerText = 'Message sent successfully!';
+                form.reset(); // Reset form fields after submission
+            } else {
+                messageContainer.style.color = '#ff0000'; // Red color for error
+                messageContainer.innerText = 'An error occurred while sending your message. Please try again later.';
+            }
+        })
+        .catch(error => {
+            messageContainer.style.color = '#ff0000'; // Red color for error
+            messageContainer.innerText = 'An error occurred while sending your message. Please try again later.';
         });
+    });
+});
         particlesJS('particles-js', {
            "particles": {
                "number": {

@@ -53,11 +53,14 @@
         }
 
         .section h2 {
-            font-size: 40px;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ff416c, #ff4b2b);
-            color: transparent;
-        }
+    font-size: 40px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 
         .section p {
             font-size: 20px;
@@ -212,6 +215,97 @@
             background-color: rgba(255, 255, 255, 0.8);
             color: #000;
         }
+        /* Media query for tablets and mobile devices */
+@media (max-width: 768px) {
+    /* Navigation bar */
+    nav {
+        padding: 10px 0;
+        text-align: left;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+
+    /* Section */
+    .section {
+        padding: 80px 10px;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+    .section p {
+        font-size: 18px;
+    }
+
+    /* Card container */
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 0;
+    }
+
+    .social-links a {
+        margin: 5px;
+    }
+
+    .social-links img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Toggle button */
+    .toggle-mode {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 16px;
+    }
+}
+
+/* Media query for extra-small devices */
+@media (max-width: 480px) {
+    /* Section */
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .section p {
+        font-size: 16px;
+    }
+
+    /* Card content */
+    .card-content h3 {
+        font-size: 20px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+    }
+
+    .card-content a {
+        padding: 8px 16px;
+    }
+
+    /* Toggle button */
+    .toggle-mode {
+        bottom: 5px;
+        right: 5px;
+        padding: 6px 12px;
+    }
+}
+
     </style>
 </head>
 <body>
