@@ -46,6 +46,26 @@
             background-color: #555;
             color: #fff;
         }
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .toggle-menu {
+                display: block;
+                order: -1;
+            }
+
+            .menu-active nav a {
+                display: block;
+            }
+        }
 
         /* Project sections */
         .project-section {
@@ -182,6 +202,18 @@
     nav a {
         display: block;
         padding: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navigation menu */
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+
+    .toggle-menu {
+        display: block;
     }
 }
 
