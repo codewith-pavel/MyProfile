@@ -38,7 +38,7 @@ I'm currently exploring:
 
 - 🧾 2+ peer-reviewed **published articles** on Transformer models and Knowledge Distillation
 - 📦 Multiple projects under review including **image captioning**, **LLMs for low-resource NLP**, and **explainable deep learning**
-- 🔗 Check out my [GitHub](https://github.com/mahirafserpavel) and [LinkedIn](https://www.linkedin.com/in/mahirafserpavel) for more
+- 🔗 Check out my [GitHub](https://github.com/codewith-pavel) and [LinkedIn](https://www.linkedin.com/in/mahirafserpavel) for more
 
 ---
 
