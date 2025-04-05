@@ -1,6 +1,6 @@
 # 💼 MyProfile
 
-Hi, I’m **Mahir Afser Pavel** — an enthusiastic **AI Researcher** and **Machine Learning Engineer** with a deep passion for solving real-world problems using intelligent systems.
+Hi, I’m **Mahir Afser Pavel** — an enthusiastic **AI Researcher** passionate about solving real-world problems using intelligent systems.
 
 My core focus lies in:
 
@@ -36,7 +36,7 @@ I'm currently exploring:
 
 ### 📚 Publications & Projects
 
-- 🧾 2+ peer-reviewed **published articles** on Transformer models and Knowledge Distillation
+- 🧾 3+ peer-reviewed **published articles** on Transformer models and Knowledge Distillation
 - 📦 Multiple projects under review including **image captioning**, **LLMs for low-resource NLP**, and **explainable deep learning**
 - 🔗 Check out my [GitHub](https://github.com/codewith-pavel) and [LinkedIn](https://www.linkedin.com/in/mahirafserpavel) for more
 
